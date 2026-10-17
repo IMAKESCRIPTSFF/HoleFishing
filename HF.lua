@@ -1,4 +1,12 @@
---// Auto Buy Bait GUI
+
+local Players = game:GetService("Players")
+
+if game.PlaceId ~= 80158232099900 then
+    warn("[Auto Bait] Wrong game! Script cancelled.")
+    return
+end
+
+print("[Auto Bait] Game verified. Starting...")
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -173,7 +181,6 @@ end)
 
 gui.Parent = playerGui
 
---// Auto-buy loop: same remote, different bait argument
 task.spawn(function()
     while not unloaded and gui.Parent do
         if autoBuy then
